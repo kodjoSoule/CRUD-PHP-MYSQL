@@ -1,8 +1,8 @@
 <?php session_start(); ?>
 <?php $locationNum = 11 ;
-    if(isset($_SESSION['isLogin'])){
-    
-    
+    if(!isset($_SESSION['isLogin'])){
+        header('location:login.php');
+    }
      ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +19,15 @@
     
     <?php include("traitement.php") ?>
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    Utilisateur : <?php echo $_SESSION['login']; ?>
+                </h1>
+                <button type="submit" name="deconnect" class="btn btn-danger">Deconnecter</button>
+                
+            </div>
+        </div>
         <div class="row mt-5">
             <div class="col-7">
                 
@@ -107,9 +116,4 @@
   </body>
 </body>
 </html>
-<?php
-}else{
-        header("location:login.php");
-    }
-?>
     
