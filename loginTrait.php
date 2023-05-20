@@ -14,12 +14,19 @@ include_once "./connexion.php" ;
 if(isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['password']) ){
     $login = $_POST['name'];
     $password = $_POST['password'];
-    $requete = "select * from t_users where login=? and password =?" ;
-    $con->prepare($requete);
-    $con->bind_param(1, $login);
-    $con->bind_param(2, $password);
-    $resultatReq = $Req->execute();
+    $requete = "select * from t_users" ;
+    $resultatReq = $con->query($requete);
+    echo "<pre>" ;
     print_r($resultatReq);
+    echo "</pre>" ;
+    while($resultatReq1 = $resultatReq->fetch_array()){
+        
+        echo "<h1> Affichage </h1>" ;
+        
+        foreach($resultatReq1 as $id => $val){
+            echo "<h1>".$id. " : " . $val. "</h1>";
+        }
+    }
     ?>
     <h1 id='sp'>
         <?php echo "Nom : ".$nom; ?>
