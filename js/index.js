@@ -1,19 +1,17 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+$(function() {
+    //alert($("#titre").text());
+    
+  });
+  // var typed = new Typed('#element', {
+  //   strings: ['Fontend dev', 'Backend dev'],
+  //   typeSpeed: 50,
+  // });
+const typed = new Typed('.multiple-text',
+{
+  Strings : ['Fontend dev', 'Backend dev'],
+  typeSpeed : 100,
+  backSpeed : 100,
+  backDelay : 1000,
+  loop : true
+});
