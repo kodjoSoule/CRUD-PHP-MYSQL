@@ -15,3 +15,8 @@ const typed = new Typed('.multiple-text',
   backDelay : 1000,
   loop : true
 });
+
+const element = document.querySelector('.ball');
+
+tween({ to: 300, duration: 500 })
+  .start((v) => element.style += 'translateX(' + v + 'px)');

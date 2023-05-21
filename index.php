@@ -27,8 +27,8 @@ $location = "";
         <div class="row">
             <div class="col">
                 <h1>
-                    <a href="index.php" class="btn btn-primary text-uppercase">Administrateur</a> : <?php echo $_SESSION['login']; ?>
-                    <a href="disconnect.php" class="btn btn-danger justify-content-right">Deconnecter</a>
+                    <a href="index.php" class="btn btn-primary text-uppercase">Administrateur</a> : <span class="h-2 text-uppercase"><?php echo $_SESSION['login']; ?></span>
+                    <a href="./index.php?disconnect=0" class="btn btn-danger justify-content-right">Deconnecter</a>
                 </h1>
             </div>
         </div>
@@ -97,7 +97,7 @@ $location = "";
             </div>
             <div class="col-5 border border-dark">
                 <h1 class="text-secondary text-center">Formulaire</h1>
-                <form class="form" method="POST" action="./traitement.php">
+                <form class="form" method="POST" action="./traitement.php"  enctype="multipart/form-data">
                 <?php if ($isUpdate1) : ?>
                     <div class="form-group">
                         <label class="form-label">ID</label>
@@ -111,6 +111,11 @@ $location = "";
                     <div class="form-group">
                         <label class="form-label">Location</label>
                         <input type="text" class="form-control" name="location" value="<?php echo $location ?>" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Image</label>
+                        <?php $image = 0  ;?>
+                        <input type="file" class="form-control" name="myImage" value="<?php echo $image ?>" required />
                     </div>
                     <?php if ($isUpdate1) : ?>
                         <div class="form-group">
@@ -130,6 +135,7 @@ $location = "";
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
     <script src="./js/index.js"></script>
 
 </body>

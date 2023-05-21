@@ -10,7 +10,7 @@
                 <h1 >Login UI | <span class='text-primary' id="element"></span></h1>
                     <form action="./loginTrait.php" method="POST">
                         <div class="form-group">
-                            <label for="name">Username</label>
+                            <label class="ball" for="name">Username</label>
                             <input type="text"  pattern="[a-zA-Z]{4,}" placeholder="Enter name" id="name" name="name" class="form-control"  required="required" />
                         </div>
                         <div class="form-group">
