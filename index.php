@@ -98,11 +98,12 @@ $location = "";
             <div class="col-5 border border-dark">
                 <h1 class="text-secondary text-center">Formulaire</h1>
                 <form class="form" method="POST" action="./traitement.php">
-                    
+                <?php if ($isUpdate1) : ?>
                     <div class="form-group">
                         <label class="form-label">ID</label>
                         <input type="text" name="id" readonly class="form-control-plaintext" value="<?php echo $id ?>" required />
                     </div>
+                <?php endif ; ?>
                     <div class="form-group">
                         <label class="form-label">Nom</label>
                         <input type="text" class="form-control" name="nom" value="<?php echo $nom ?>" required />

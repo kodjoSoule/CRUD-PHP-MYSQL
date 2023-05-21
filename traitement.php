@@ -36,10 +36,12 @@
     if(isset($_POST['btn_update'])){
         $nouvelName = $_POST['nom'];
         $nouvelLocation = $_POST['location'];
-        echo "<p>ID $idUp</p>" ;
-        echo "<p>NN $nouvelName</p>" ;
-        echo "<p>NL $nouvelLocation</p>" ;
-        $con->query("UPDATE t_crud SET name = $nouvelName, location =$nouvelLocation WHERE id=$idUp ") or die($con->error);
+        $id = $_POST['id'];
+        echo "<p>$id</p>" ;
+        echo "<p>$nouvelName</p>";
+        echo "<p>$nouvelLocation</p>" ;
+        // $con->query("UPDATE t_crud SET name=$nouvelName, location=$nouvelLocation WHERE id=$id ") or die($con->error);
+        $con->query("UPDATE t_crud SET name = '$nouvelName', location ='$nouvelLocation' WHERE id='$id' ") or die($con->error);
         $isUpdate1 = true ;
         $_SESSION['message'] = "Location mise a jour  avec success" ;
         $_SESSION['message_type'] = "alert-success" ;
