@@ -14,6 +14,8 @@
     <?php
     $nom = "Kodjo";
     include_once "./connexion.php";
+    
+    
     if (isset($_POST['submit']) && isset($_POST['name']) && isset($_POST['password'])) {
         $login = $_POST['name'];
         $password = $_POST['password'];
@@ -33,13 +35,9 @@
             // }
             //
             if ($data = $resultatReq->fetch_assoc()) {
-
                 $_SESSION['login'] = $data['login'];
                 $_SESSION['isLogin'] = true;
-
-                echo "<pre>";
-                print_r($data);
-                echo "</pre>";
+                header('location:index.php');
             }
 
 
@@ -50,7 +48,8 @@
     <?php
     }
     ?>
-    <a href="./index.php">Home PG</a>
+    
+
 </body>
 
 </html>
